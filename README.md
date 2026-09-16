@@ -1,95 +1,45 @@
-# Interview Preparation Skills
+# CV Skills
 
-Репозиторий содержит связанные skills для последовательной подготовки к поиску работы и собеседованиям.
+Репозиторий содержит два связанных skill для подготовки к поиску работы и собеседованиям:
 
-- `career-grill` строит и помогает защитить карьерную легенду для одной роли в одной компании.
-- `career-cv` превращает одну выбранную роль из готовой легенды в русские или английские ATS-bullets под конкретную вакансию.
+- [`career-grill`](skills/career-grill/README.md) — строит и помогает защитить карьерную легенду по одной роли;
+- [`career-cv`](skills/career-cv/README.md) — превращает подтверждённый опыт из легенды в ATS-сильные CV-bullets.
 
-Оба skill работают по одной роли за запуск. Сначала завершите главу через `career-grill`, затем используйте её как источник фактов для `career-cv`.
+Рекомендуемый порядок: сначала проработать роль через `career-grill`, затем подготовить её секцию резюме через `career-cv`.
 
-## Установка
+## Установка с выбором skills
 
-Из корня проекта установите нужный skill через `skills`:
+Команда обнаружит оба skill и предложит выбрать нужные skills и целевых агентов. Режим `--copy` нужен `career-cv`, чтобы сохранять keyword research внутри установленного skill.
 
 ```bash
-npx skills@latest add FOZERY/career-grill
+npx skills@latest add FOZERY/cv-skills --copy
 ```
 
-Выберите `career-grill` и нужного агента. Для копирования файлов без symlink можно использовать:
+## Установка всех skills
 
 ```bash
-npx skills@latest add FOZERY/career-grill \
-  --skill career-grill \
+npx skills@latest add FOZERY/cv-skills \
+  --all \
   --copy \
   -y
 ```
 
-После установки запустите в агенте:
+Команды установки одного skill находятся в его README:
 
-```text
-$career-grill
-```
-
-Для подготовки CV выберите `career-cv` либо установите его явно:
-
-```bash
-npx skills@latest add FOZERY/career-grill \
-  --skill career-cv \
-  --copy \
-  -y
-```
-
-После установки запустите:
-
-```text
-$career-cv
-```
-
-## Результат работы
-
-`career-grill` создаёт:
-
-- `CAREER_LEGEND.md` — единую итоговую легенду по всем компаниям;
-- `research/<company-slug>.md` — исследование активной компании;
-- `research/market-and-location.md` — официальные источники по выбранной стране, праву работы и формату договора для международного маршрута.
-
-`career-cv` создаёт или обновляет:
-
-- `research/cv-keywords-<specialization>-<market>.md` — одноразовый рейтинг топ‑50 ключевых слов по выборке актуальных вакансий;
-- `CV_RU.md` или `CV_EN.md` — общее CV, которое дополняется по одной выбранной роли за запуск;
+- [установка `career-grill`](skills/career-grill/README.md#установка);
+- [установка `career-cv`](skills/career-cv/README.md#установка).
 
 ## Структура
 
 ```text
 skills/
 ├── career-grill/
+│   ├── README.md
 │   ├── SKILL.md
 │   └── references/
-│       ├── grill-protocol.md
-│       ├── interview-map.md
-│       ├── market-and-location.md
-│       ├── metrics.md
-│       ├── notion-bullets-by-technology.md
-│       ├── research-protocol.md
-│       └── role-growth.md
 └── career-cv/
+    ├── README.md
     ├── SKILL.md
-    └── agents/
-        └── openai.yaml
+    ├── agents/
+    └── research/
 ```
-
-`skills/career-grill/` и `skills/career-cv/` — исходные skills для публикации. Каталог `.agents/skills/` появляется в пользовательском проекте после установки и в этот репозиторий не требуется.
-
-## Требования к старту
-
-Для глубокой проработки легенды нужны пять фактов:
-
-1. компания;
-2. даты работы;
-3. роль и уровень;
-4. домен или основной проект;
-5. основной стек.
-
-Перед глубокой проработкой пользователь также выбирает целевой маршрут: российский рынок, международный рынок или оба профиля на одной карьерной истории.
-
-`career-grill` не создаёт CV: он готовит карьерную легенду, ответы на follow-up-вопросы и `Паспорт для CV`, где подтверждённые факты отделены от тренировочных реконструкций. `career-cv` один раз исследует ключевые слова специализации, затем берёт подтверждённые строки паспорта и превращает их в bullets с терминами вакансии и метриками.
