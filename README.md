@@ -40,5 +40,6 @@ skills/
 └── career-cv/
     ├── README.md
     ├── SKILL.md
-    └── agents/
+    ├── agents/
+    └── references/
 ```
