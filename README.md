@@ -41,6 +41,7 @@ skills/
 └── career-grill/
     ├── SKILL.md
     └── references/
+        ├── grill-protocol.md
         ├── interview-map.md
         ├── metrics.md
         ├── notion-bullets-by-technology.md
