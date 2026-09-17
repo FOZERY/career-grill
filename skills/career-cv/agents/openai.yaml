@@ -1,4 +1,4 @@
 interface:
   display_name: "Career CV"
-  short_description: "Сделать ATS-сильные CV-bullets по одной роли"
-  default_prompt: "Используй $career-cv: сначала создай или переиспользуй топ-50 ключевых слов специализации, затем преврати одну выбранную роль из CAREER_LEGEND.md в CV-bullets под вакансию."
+  short_description: "Сделать сильные Node.js CV-bullets по claims"
+  default_prompt: "Используй $career-cv, чтобы упаковать разрешённые claims выбранной Node.js-роли из CAREER_LEGEND.md в короткие CV-bullets под вакансию."
